@@ -6,11 +6,6 @@ function addTagsAndMore() {
 	link.setAttribute('type', 'text/css');
 	link.setAttribute('href', './button.css')
 
-	var js = document.createElement('script');
-	js.setAttribute('src', 'https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js');
-	document.body.appendChild(js);
-	js.onload = clipboardReady;
-
 	var div = document.createElement('div');
 	button = document.createElement('button'); 
 
@@ -23,7 +18,6 @@ function addTagsAndMore() {
 	div.appendChild(button);
 	tables[8].appendChild(div);
 
-	// button = document.getElementById('copyButton');
 	button.appendChild(link);
 	tbl = document.getElementById('table');
 }
@@ -37,9 +31,6 @@ function giveElementsToOut(){
 		if(i === 4 || i === 0) {continue}	
 		var child = row.childNodes; // [a]
 		var text = child[3];
-		// console.log('children: ', i, child[3].textContent);
-		// console.log(i, text.textContent);
-		// console.log(text.textContent.trim());
 		if(text.textContent.trim() !== ''){
 			if(i === 2 || i === 7 || i === 8){
 				// replace(i);
@@ -58,12 +49,11 @@ function giveElementsToOut(){
 addTagsAndMore();
 giveElementsToOut();
 
-function clipboardReady() {
-	console.log('clipboardReady dziala', button);
-	new Clipboard(button, {
+console.log("TES0XXXXT", document.querySelectorAll('table'));
+
+new Clipboard(button, {
 		text: function(trigger) {
 		console.log('output ', out);
 			return out.join(' ');
 		}
 	});
-}
