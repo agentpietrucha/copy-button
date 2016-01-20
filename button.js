@@ -19,14 +19,14 @@ function addTagsAndMore() {
 	tables[8].appendChild(div);
 
 	button.appendChild(link);
-	tbl = document.getElementById('table');
+	tbl = tables[8];
 }
 
 var out = [];
 
 function giveElementsToOut(){
 	console.log('giveElementsToOut dziala');
-	for(var i = 0; i < tbl.rows.length - 5; i++){
+	for(var i = 0; i < tbl.rows.length - 6; i++){
 		var row = tbl.rows[i];
 		if(i === 4 || i === 0) {continue}	
 		var child = row.childNodes; // [a]
